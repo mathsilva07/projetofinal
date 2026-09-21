@@ -1,0 +1,28 @@
+* {
+    margin: auto;
+    padding: 0;
+    height: 100px;
+}
+
+.navbar {
+    background-color: rgb(24, 10, 2);
+    color: white;
+    display: flex;
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: center;
+   
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
