@@ -1,28 +1,60 @@
 * {
-    margin: auto;
+    margin: 0;
     padding: 0;
-    height: 100px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
 }
 
 .navbar {
     background-color: rgb(24, 10, 2);
     color: white;
     display: flex;
-    
+    justify-content: center;
+
+}
+
+.navbarTudo {
+    display: flex;
+    width: 1000px;
+    justify-content: center;
 }
 
 nav {
     display: flex;
     align-items: center;
     gap: 25px;
-    justify-content: center;
-   
+    padding: 30px;
+    font-size: 25px;
+
+}
+
+.titulo-nav {
+    font-size: 95px;
+    margin: 0;
+
 }
 
 a {
     text-decoration: none;
     color: white;
-    justify-content: space-between;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+a:hover {
+    color: rgb(214, 168, 124);
+    transition: 1s;
+}
+
+.home {
+    text-align: center;
+    padding: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+}
+
+
 
