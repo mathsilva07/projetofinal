@@ -5,9 +5,50 @@
 }
 
 body {
-    background-color: black;
+  background-color: rgb(15, 6, 2); 
     color: white;
+    min-height: 100vh;
+position: relative;
+overflow-x: hidden;   
 }
+
+body::before,body::after {
+    content: ""; 
+   position: fixed; /*fixa o efeito de nevoa na tela, mesmo quando o usuário rolar a página*/
+   width: 60vw; /*tamanho do efeito baseado na largura da tela*/
+   height: 60vw;
+   border-radius: 50%;
+   filter: blur(150px); /*efeito de desfoque*/
+z-index: -1;
+animation: movimentoNevoa 20s infinite alternate ease-in-out;
+}
+
+body::before {
+    background-color: rgba(120, 65, 30, 0.4);
+    top: -10%;
+    left: -10%;
+}
+
+body::after {
+    background-color: rgba(80, 40, 15, 0.35); 
+    bottom: -10%;
+    right: -10;
+    animation-duration: 25s;
+    animation-delay: -5s;
+}
+
+@keyframes movimentoNevoa {
+    0% {
+        transform: translate(0,0) scale(1);
+    }
+    50% {
+        transform: translate(15%, 20%) scale(1.3);
+    }
+    100% {
+        transform: translate(-10%, 15%) scale(0.8);
+    }
+}
+
 
 .navbar {
     background-color: rgb(24, 10, 2);
@@ -56,5 +97,20 @@ a:hover {
     font-size: 40px;
 }
 
+.home h1 {
+    font-size: 65px;             /* Aumenta o tamanho para ter mais impacto na tela */
+    font-weight: 700;            /* Deixa a fonte mais encorpada/grossa */
+    letter-spacing: 4px;         /* Espaçamento entre letras traz muita elegância */
+    margin-bottom: 50px;         /* Substitui o <br>, criando a margem correta até o carrossel */
+    text-transform: uppercase;   /* Força todas as letras a ficarem maiúsculas */
+    color: #ffffff;              /* Mantém a cor base branca */
+}
 
+
+.Sobre {
+    background-color: white;
+    color: black;
+    height: 100%;
+    padding: 20px;
+}
 
