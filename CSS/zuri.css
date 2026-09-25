@@ -110,7 +110,42 @@ a:hover {
 .Sobre {
     background-color: white;
     color: black;
-    height: 100%;
     padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+   
 }
 
+.carrosel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0 , 0, 0, 8);
+}
+
+.slides {
+    width: 100%;
+    display: flex;
+    animation: deslizeAutomatico 12s infinite ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+    height: 600px;
+    object-fit: cover;
+}
+
+.secao-sobre {
+    padding: 20px;
+    justify-content: space-between;
+}
+
+
+.servicos {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
