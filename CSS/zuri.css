@@ -165,3 +165,9 @@ margin-bottom: 15px;
     flex-direction: row-reverse; 
 }
 
+
+.servicos {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
