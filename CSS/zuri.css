@@ -108,9 +108,60 @@ a:hover {
 
 
 .Sobre {
-    background-color: white;
-    color: black;
-    height: 100%;
-    padding: 20px;
+   padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+.sobre-container {
+ display: flex; /*para alinha o conteúdo um ao lado do outro*/    
+ align-items: center;
+justify-content: space-between;
+width: 100%; /*largura máxima em relação ao conteúdo*/
+max-width: 1000px; /*mesmo alinhamento para o navbartudo*/
+gap: 50px; /*pequeno espaçamento entre o texto e a foto*/
+
+/*efeito vidro*/
+
+background: rgba(24, 10, 2, 0.4);
+backdrop-filter: blur(10px);
+border: 1px solid rgba (214, 168, 124, 0.3); /*Borda fina usando a cor do seu a:hover*/
+
+padding: 50px;
+border-radius: 20px;
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilização do título QUEM SOMOS */ 
+.sobre-texto h1 {
+    font-size: 45px;
+    color: rgb(214, 168, 124);
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+/*Estilização dos Parágrafos*/
+.sobre-texto p {
+    font-size: 20px; /*aumentar o tamanho da fonte*/
+    line-height: 1.6; /*aumentar o tamanho das linhas*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0; /*branco levemente acinzentado para não cansar a vista*/
+margin-bottom: 15px;
+}
+
+.sobre-imagem img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.sobre-container.reverso {
+    flex-direction: row-reverse; 
 }
 
