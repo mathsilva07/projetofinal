@@ -183,17 +183,63 @@ a:hover {
     /*sombras da caixa(cards)*/
 }
 
+
 .sobre-container.reverso {
     flex-direction: row-reverse;
 }
 
-.conteudo-servico {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-text-align: center;
+.titulo-servicos {
+    color: rgb(214, 168, 124);
+    font-size: 45px;
 }
 
-.card-servicos {
+
+.conteudo-servico {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgba(24, 10, 2, 0.4);
+    text-align: center;
+    margin: 50px;
+}
+
+.container-servicos {
     display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    padding: 10px;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.descricao-servico {
+    gap: 50px;
+    padding: 25px;
+    text-align: center;
+}
+
+.precos {
+    color: rgb(214, 168, 124);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 25px;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards-preco {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
+    padding: 35px;
+
+}
+
+.card{
+    margin: 1rem;
+    background-color: #000000;
+    padding: 50px;
+    height: 450px;
+    border-radius: 10px;
 }
