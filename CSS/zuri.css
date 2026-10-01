@@ -57,7 +57,7 @@ body::after {
 
 
 .navbar {
-    background-color: rgb(24, 10, 2);
+    background-color: rgb(15, 7, 2);
     color: white;
     display: flex;
     justify-content: center;
@@ -198,6 +198,10 @@ a:hover {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin: 50px;
+    background-color: #000000;
+    padding: 40px;
+
+
 }
 
 .container-servicos {
@@ -211,11 +215,25 @@ a:hover {
     align-items: center;
 }
 
+.capa-servicos {
+    margin: auto;
+    padding: 30px;
+    object-fit: fill;
+    width: 900px;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
 .descricao-servico {
     gap: 50px;
-    padding: 25px;
+    padding: 30px;
     text-align: center;
+    font-size: 15px;
+    align-items: center;
+    font-size: 20px;
 }
+
+
 
 .precos {
     color: rgb(214, 168, 124);
@@ -228,21 +246,34 @@ a:hover {
 }
 
 .cards-preco {
-  display: flex; /*alinha um ao lado do outro*/
- max-width: 1100px; /*a largura maxima alinha com o resto do site*/
- margin: 0 auto; /*centraliza com o container*/
-padding: 35px 20px;
-gap: 30px; /*espaçamento entre as caixas*/
-justify-content: center; /*centraliza o bloco de preços*/
+    display: flex;
+    /*alinha um ao lado do outro*/
+    max-width: 1100px;
+    /*a largura maxima alinha com o resto do site*/
+    margin: 0 auto;
+    /*centraliza com o container*/
+    padding: 35px 20px;
+    gap: 30px;
+    /*espaçamento entre as caixas*/
+    justify-content: center;
+    /*centraliza o bloco de preços*/
+    flex-wrap: wrap;
 }
 
-.card{
+.card {
+    width: 300px;
     margin: 1rem;
     background-color: #000000;
-    padding: 40px; /*espaçamento interno do conteudo*/
-    height: 600px; /*altura*/
-    border-radius: 10px; /*borda de 10px*/
-    flex: 1; /*todas as caixas tem a mesma largura*/
+    padding: 40px;
+    /*espaçamento interno do conteudo*/
+    height: 600px;
+    /*altura*/
+    border-radius: 10px;
+    /*borda de 10px*/
+    flex: 1;
+    /*todas as caixas tem a mesma largura*/
+
+    position: relative;
 }
 
 .valor {
@@ -251,12 +282,42 @@ justify-content: center; /*centraliza o bloco de preços*/
 
 .btnplano {
     margin-top: auto;
-border-color: rgb(214, 168, 124);
-  background-color: transparent;
+    border-color: rgb(214, 168, 124);
+    background-color: transparent;
     border-radius: 30px;
-     color: rgb(214, 168, 124);
-     padding: 10px;
-     text-align: center;
-     font-weight: bold;
-     cursor: pointer;
+    color: rgb(214, 168, 124);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+}
+
+.btnplano:hover {
+    color: #000000;
+    background-color: rgb(214, 168, 124);
+    transition: 0.2s;
+}
+
+.footer {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.inicio-rodape {
+
+    padding: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 20px;
+}
+
+.suporte-rodape {
+    padding: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
 }
