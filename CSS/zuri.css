@@ -321,3 +321,29 @@ a:hover {
 
 
 }
+
+
+.area-contato {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    justify-content: start;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.campo-email {
+    width: 400px;
+}
+
+.campo-mensagem {
+    height: 200px;
+    width: 400px;
+    margin-top: 10px;
+}
+
+.btn-enviar {
+
+
+}
