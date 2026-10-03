@@ -12,6 +12,11 @@ body {
     overflow-x: hidden;
 }
 
+.img-carrossel {
+ max-width: 100%;
+ max-width: 100%;
+}
+
 body::before,
 body::after {
     content: "";
@@ -282,15 +287,14 @@ a:hover {
 
 .btnplano {
     margin-top: auto;
-    border-color: rgb(214, 168, 124);
+    border: solid rgb(214, 168, 124);
     background-color: transparent;
-    border-radius: 30px;
+    border-radius: 5px;
     color: rgb(214, 168, 124);
     padding: 10px;
     text-align: center;
     font-weight: bold;
     cursor: pointer;
-
     position: absolute;
     bottom: 10px;
     left: 20%;
@@ -302,10 +306,58 @@ a:hover {
     transition: 0.2s;
 }
 
+
+
+.contato-secao {
+    display: flex;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+.area-contato {
+    margin: auto;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    max-width: 600px;
+    padding: 50px;
+    border-radius: 20px;
+    background: rgba(24, 10, 2, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(214, 168, 124, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.formulario {
+    margin-top: auto;
+}
+.campo-mensagem {
+    margin-top: auto;
+    padding: 5px;
+}
+
+.btn-enviar {
+    color: bisque;
+    background-color: #000000;
+    border-radius: 5px;
+    width: 70px;
+    height: 20px;
+    padding: 2px;
+    border: none;
+}
+
+.btn-enviar:hover {
+    background-color: rgb(214, 168, 124);
+    color: #000000;
+    transition: 0.2s;
+}
+
 .footer {
     background-color: black;
     display: flex;
     align-items: center;
+    height: 300px;
+    margin-top: 50px;
 }
 
 .inicio-rodape {
@@ -318,33 +370,14 @@ a:hover {
 .suporte-rodape {
     padding: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
 }
 
-
-.contato-secao {
-    display: flex;
-    justify-content: center;
-    padding: 100px 20px;
+.autoria {
+    margin-top: 200px;
 }
 
-.area-contato{
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;
-    max-width: 600px;
-    padding: 50px;
-    border-radius: 20px;
-
-    background: rgba(24, 10, 2, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(214, 168, 124, 0.3);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+.logo-zuri-rodape {
+    font-size: 80px;
+    margin-bottom: 25px;
+    margin-left: 250px;
 }
-
-.area-contato h1 {
-    color: rgb(214, 168, 124);
-    margin-bottom: 10px;
-}
-
