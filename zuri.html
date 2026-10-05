@@ -24,6 +24,12 @@
             </nav>
         </div>
 
+
+        <script src="javascript/script.js"></script>
+
+
+
+
     </header>
     <!--Seção Home-->
     <section>
@@ -34,8 +40,12 @@
             <br>
         </div>
 
-        <div class="carrossel">
-            <img class="img-carrossel" src="src/download (8).jfif" alt="">
+        <div class="container-slider">
+    <button id="prev-button"><img src="images/arrow.png"></button>
+            <div class="container-images">
+                <img src="src/Mídia (1).jpg" alt="">
+                <img src="src/Mídia.jpg" alt="">
+            </div>
         </div>
 
     </section>
@@ -94,47 +104,41 @@
     </section>
     <!--Seção Serviços-->
     <section class="secao-servico" id="SERVIÇOS">
+
         <div class="conteudo-servico">
             <h1 class="titulo-servicos">CONHEÇA NOSSOS SERVIÇOS</h1>
+            <p class="subtitulo-servicos">Soluções digitais de alto padrão para destacar a sua marca.</p>
 
-
-            <div class="descricao-servico">
-                <div class="descricao1">
-                    <h2>Interface e Identidade Visual</h2>
-                    <p>Design Afro-Centrado: Criação de layouts exclusivos que exaltam a identidade, tons de pele e a
-                        cultura negra.
-                        <br>
-                        Criação de Landing Pages:
-                        Desenvolvemos páginas de alta conversão para divulgação de produtos, serviços, eventos e
-                        campanhas de marketing, focadas em gerar resultados.
-                    </p>
+            <div class="grid-servicos">
+                <!-- Cartão Serviço 1 -->
+                <div class="card-servico">
+                    <h2>01. Interface e Identidade</h2>
+                    <p><strong>Design Afro-Centrado:</strong> Criação de layouts exclusivos que exaltam a identidade,
+                        tons de pele e a cultura negra.</p>
+                    <p><strong>Landing Pages:</strong> Desenvolvemos páginas de alta conversão para produtos e
+                        campanhas, focadas em resultados.</p>
                 </div>
 
-                <br>
-                <h2 class="descricao2">Experiência do Usuário (UX/UI)</h2>
-                <p>Navegação Intuitiva: Páginas estruturadas para facilitar a visualização de serviços, portfólios e
-                    preços.
+                <!-- Cartão Serviço 2 -->
+                <div class="card-servico">
+                    <h2>02. Experiência (UX/UI)</h2>
+                    <p><strong>Navegação Intuitiva:</strong> Páginas estruturadas para facilitar a visualização de
+                        serviços, portfólios e preços.</p>
+                    <p><strong>Manutenção e Suporte:</strong> Suporte contínuo e atualização de conteúdos para manter
+                        seu site sempre seguro.</p>
+                </div>
 
-                    <br>
-
-                    Manutenção e Suporte:
-                    Oferecemos suporte contínuo, atualização de conteúdos, correção de problemas e melhorias para manter
-                    seu site sempre atualizado e seguro.
-                </p>
-                <br>
-                <h2 class="descricao3">Performance e Acessibilidade</h2>
-                <p>Acessibilidade Digital: Interfaces inclusivas e adaptáveis para garantir uma ótima experiência a
-                    todos os usuários.</p>
-                Integração com Redes Sociais:
-                Conectamos seu site às principais redes sociais para fortalecer sua marca e facilitar a comunicação com
-                seu público.
+                <!-- Cartão Serviço 3 -->
+                <div class="card-servico">
+                    <h2>03. Performance e Acesso</h2>
+                    <p><strong>Acessibilidade Digital:</strong> Interfaces inclusivas e adaptáveis para garantir uma
+                        ótima experiência a todos.</p>
+                    <p><strong>Redes Sociais:</strong> Conectamos seu site às principais redes sociais para facilitar a
+                        comunicação.</p>
+                </div>
             </div>
-
-
-
-            <br>
-
         </div>
+
 
         <section class="precos">
             <h1>PREÇOS</h1>
@@ -216,60 +220,55 @@
 
     </section>
     <!--Seção Contato-->
-    <section id="CONTATO">
+    <section id="CONTATO" class="contato-secao">
         <div class="area-contato">
             <h1>Entre em contato conosco.</h1>
-            <p>Duvidas, reclamações ou elogios.</p>
+            <p>Dúvidas, reclamações ou elogios.</p>
 
             <form class="formulario">
                 <label>E-mail</label>
-                <br>
                 <input class="campo-padrao" type="email" placeholder="Digite seu E-mail">
-                <br>
-                <label>Mensagem</label>
-                <br>
-                <textarea class="campo-mensagem" placeholder="Deixe sua mensagem"></textarea>
-                <br>
-                <button class="btn-enviar" type="button">Enviar</button>
-            </form>
 
+                <label>Mensagem</label>
+                <!-- Adicionada a classe campo-padrao aqui também para herdar o visual -->
+                <textarea class="campo-padrao campo-mensagem" placeholder="Deixe sua mensagem"></textarea>
+
+                <button class="btn-enviar" type="button">Enviar Mensagem</button>
+            </form>
         </div>
     </section>
 
-
+    <!-- Rodapé -->
     <footer class="footer">
-        <div class="inicio-rodape">
-            <h1>Inicio</h1>
-            <a href="#HOME">HOME</a>
-            <br>
-            <a href="#SOBRE">SOBRE</a>
-            <br>
-            <a href="#SERVIÇOS">SERVIÇOS</a>
-
-        </div>
-
-        <div class="suporte-rodape">
-            <h1>Social</h1>
-            <p>INSTAGRAM</p>
-            <p>FACEBOOK</p>
-
-        </div>
-
-        <div class="suporte-rodape">
-            <h1>Contato Rápido</h1>
-            <p>E-MAIL: </p>
-            <p>TELEFONE: </p>
-        </div>
-
-
-            <p class="autoria">Site Produzido por alunos do curso Transforme-se SP - SERASA &copy;</p>
-
-            <div class="logo-zuri-rodape">
-                <h1>ZURI</h1>
+        <div class="colunas-rodape">
+            <div class="coluna">
+                <h1>Início</h1>
+                <a href="#HOME">HOME</a>
+                <a href="#SOBRE">SOBRE</a>
+                <a href="#SERVIÇOS">SERVIÇOS</a>
             </div>
 
-    </footer>
+            <div class="coluna">
+                <h1>Social</h1>
+                <a href="#">INSTAGRAM</a>
+                <a href="#">FACEBOOK</a>
+            </div>
 
+            <div class="coluna">
+                <h1>Contato Rápido</h1>
+                <p>E-MAIL: contato@zuri.com</p>
+                <p>TELEFONE: (11) 99999-9999</p>
+            </div>
+
+            <div class="coluna logo-rodape">
+                <h1>ZURI</h1>
+            </div>
+        </div>
+
+        <div class="rodape-inferior">
+            <p class="autoria">Site Produzido por alunos do curso Transforme-se SP - SERASA &copy;</p>
+        </div>
+    </footer>
 </body>
 
 </html>
