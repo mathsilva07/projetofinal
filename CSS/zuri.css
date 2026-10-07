@@ -29,6 +29,8 @@ body {
     height: 100%;
     object-fit: cover; /* Evita que as fotos dos modelos fiquem esticadas ou achatadas */
     border-radius: 20px; /* Arredonda as pontas da foto também */
+
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* Os botões invisíveis até passar o mouse */
