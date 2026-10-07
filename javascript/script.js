@@ -3,7 +3,7 @@ let btnAnterior = document.getElementById("anterior");
 let Quadroimagem = document.getElementById("imagem");
 
 let slider = [
-    "images/zuri1", "images/zuri2"
+    "images/zuri1.jpg", "images/zuri2.jpg"
 ]
 
 let foto = 0;
