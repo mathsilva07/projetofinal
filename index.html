@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZURI</title>
     <link rel="stylesheet" href="CSS/zuri.css">
+    <link rel="shortcut icon" href="images/zurilogo.png" type="">
+
 </head>
 
 <body>
+
 
     <header class="navbar">
         <div class="navbarTudo">
@@ -24,15 +27,9 @@
             </nav>
         </div>
 
-
-
-
-
-
-
     </header>
     <!--Seção Home-->
-   <section>
+    <section>
         <div class="home" id="HOME">
             <br>
             <h1>Bem Vindo ao ZURI</h1>
@@ -216,6 +213,23 @@
                     <button class="btnplano">QUERO ESSE PLANO <span>&rarr;</span></button>
                 </div>
 
+                <div id="modal-checkout" class="modal-oculto">
+                    <div class="modal-conteudo">
+                        <span class="fechar-modal" id="fechar-modal">&times;</span>
+
+                        <h2>Finalize sua Compra</h2>
+                        <p>Você selecionou o plano: <strong id="nome-plano-escolhido"></strong></p>
+
+                        <form class="formulario-checkout">
+                            <input type="text" class="campo-padrao" placeholder="Nome Completo">
+                            <input type="email" class="campo-padrao" placeholder="E-mail">
+                            <input type="text" class="campo-padrao" placeholder="Número do Cartão (Fictício)">
+
+                            <button type="button" class="btn-enviar"
+                                onclick="alert('assinatura ZURI realizada com sucesso!')">Confirmar Assinatura</button>
+                        </form>
+                    </div>
+                </div>
             </div>
 
         </section>
@@ -271,7 +285,7 @@
             <p class="autoria">Site Produzido por alunos do curso Transforme-se SP - SERASA &copy;</p>
         </div>
     </footer>
-            <script src="javascript/script.js"></script>
+    <script src="javascript/script.js"></script>
 </body>
 
 </html>

@@ -48,3 +48,35 @@ function mostrarAnterior() {
 btnAnterior.addEventListener("click", mostrarAnterior);
 setInterval(mostrarProximo, 4000);
 
+// lógica do checkout modal
+
+//1. Captura os elemntos do html
+let botoesPlano = document.querySelectorAll(".btnplano"); /*captura todos os três botões*/
+let modal = document.getElementById("modal-checkout");
+let btnFecharModal = document.getElementById("fechar-modal");
+let textoPlanoEscolhido = document.getElementById("nome-plano-escolhido");
+
+botoesPlano.forEach(function (botao) {
+    botao.addEventListener("click", function () {
+        //encontra o nome do plano no Modal (h1) que está dentro do mesmo cartão do botão clicado
+        let cartaoPai = botao.parentElement;
+        let nomeDoPlano = cartaoPai.querySelectorAll("h1").innerText;
+
+        //Escreve o nome do plano no modal e exibe a janela
+        textoPlanoEscolhido.innerText = nomeDoPlano;
+        modal.style.display = "flex";
+    });
+
+});
+
+//3. Lógica para fechar a janela ao clicar no "X"*/
+btnFecharModal.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+
+// 4. (Extra profissional) Fechar a janela se o utilizador clicar fora dela (no fundo escuro)
+window.addEventListener("click", function(evento) {
+    if (evento.target == modal) {
+        modal.style.display = "none"
+    };  
+});
