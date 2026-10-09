@@ -74,32 +74,25 @@ body::after {
 
 /* A fotografia em si */
 .carrossel img {
+    margin: auto;
     width: 100%;
     height: 100%;
     object-fit: cover;
     /* Evita que as fotos dos modelos fiquem esticadas ou achatadas */
-    border-radius: 20px;
+    border: none;
     /* Arredonda as pontas da foto também */
-
+    background: transparent;
     transition: opacity 0.5s ease-in-out;
+    border-radius: 20px
 }
 
 /* Os botões invisíveis até passar o mouse */
 .carrossel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    /* Centraliza os botões verticalmente com perfeição */
-    padding: 15px 20px;
-    font-size: 30px;
+    background: transparent;
     border: none;
+    color: transparent;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Fundo preto semi-transparente do professor */
-    color: white;
-    border-radius: 50%;
-    /* Deixa os botões redondos */
-    transition: 0.3s;
+    outline: none;
 }
 
 /* Onde eles ficam encostados */
@@ -112,10 +105,7 @@ body::after {
 }
 
 /* Efeito ao passar o mouse com as cores do ZURI */
-.carrossel button:hover {
-    background-color: rgb(214, 168, 124);
-    color: black;
-}
+
 
 .navbar {
     background-color: rgb(15, 7, 2);
@@ -580,13 +570,71 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+    .navbarTudo {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        padding: 10px;
+        font-size: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .titulo-nav {
+        font-size: 60px;
+    }
+
+    .home h1 {
+        font-size: 20px;
+    }
+
+    .home p {
+        font-size: 20px;
+    }
+
+    .carrossel {
+        height: 350px;
+        margin-bottom: 50px;
+    }
+
+    .carrossel button {
+        font-size: 20px;
+        padding: 10px;
+    }
 
     .sobre-container,
     .sobre-container.reverso {
         flex-direction: column;
         text-align: center;
+        padding: 30px 20px;
     }
-.navbarTudo{
-    flex-direction: column;
-}
+
+    .sobre-imagem img {
+        width: 100%;
+        height: auto;
+    }
+
+    .titulo-servicos,
+    .precos h1,
+    .area-contato h1 {
+        font-size: 32px;
+    }
+
+    .card {
+        height: auto;
+        padding-bottom: 70px;
+    }
+
+    .colunas-rodape {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-rodape h1 {
+        font-size: 45px;
+    }
 }
