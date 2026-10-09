@@ -50,33 +50,41 @@ setInterval(mostrarProximo, 4000);
 
 // lógica do checkout modal
 
-//1. Captura os elemntos do html
-let botoesPlano = document.querySelectorAll(".btnplano"); /*captura todos os três botões*/
+// --- LÓGICA DO CHECKOUT MODAL ---
+
+// 1. Capturar os elementos do HTML
+let botoesPlano = document.querySelectorAll(".btnplano");
 let modal = document.getElementById("modal-checkout");
 let btnFecharModal = document.getElementById("fechar-modal");
 let textoPlanoEscolhido = document.getElementById("nome-plano-escolhido");
 
-botoesPlano.forEach(function (botao) {
-    botao.addEventListener("click", function () {
-        //encontra o nome do plano no Modal (h1) que está dentro do mesmo cartão do botão clicado
-        let cartaoPai = botao.parentElement;
-        let nomeDoPlano = cartaoPai.querySelectorAll("h1").innerText;
-
-        //Escreve o nome do plano no modal e exibe a janela
-        textoPlanoEscolhido.innerText = nomeDoPlano;
+// 2. Criar um evento para cada botão da tabela de preços
+botoesPlano.forEach(function(botao) {
+    botao.addEventListener("click", function() {
+        
+        // O '.closest' garante que ele encontre a caixa exata do cartão, não importa o que aconteça
+        let cartao = botao.closest(".card");
+        
+        // Procura o H1 dentro desse cartão específico e extrai APENAS o texto visível
+        let tituloH1 = cartao.querySelector("h1");
+        let nomeDoPlano = tituloH1.textContent; 
+        
+        // Injeta o nome correto (START, PRO ou PREMIUM) no modal
+        textoPlanoEscolhido.textContent = nomeDoPlano;
+        
+        // Exibe a janela escura
         modal.style.display = "flex";
     });
-
 });
 
-//3. Lógica para fechar a janela ao clicar no "X"*/
-btnFecharModal.addEventListener("click", function () {
+// 3. Lógica para fechar a janela ao clicar no "X"
+btnFecharModal.addEventListener("click", function() {
     modal.style.display = "none";
 });
 
-// 4. (Extra profissional) Fechar a janela se o utilizador clicar fora dela (no fundo escuro)
+// 4. Fechar a janela se o utilizador clicar fora dela (no fundo escuro)
 window.addEventListener("click", function(evento) {
-    if (evento.target == modal) {
-        modal.style.display = "none"
-    };  
+    if (evento.target === modal) {
+        modal.style.display = "none";
+    }
 });
