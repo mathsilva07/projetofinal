@@ -48,43 +48,49 @@ function mostrarAnterior() {
 btnAnterior.addEventListener("click", mostrarAnterior);
 setInterval(mostrarProximo, 4000);
 
-// lógica do checkout modal
 
-// --- LÓGICA DO CHECKOUT MODAL ---
+// FAQ ---
 
-// 1. Capturar os elementos do HTML
-let botoesPlano = document.querySelectorAll(".btnplano");
-let modal = document.getElementById("modal-checkout");
-let btnFecharModal = document.getElementById("fechar-modal");
-let textoPlanoEscolhido = document.getElementById("nome-plano-escolhido");
+// 1. Capturar todos os botões de pergunta
+let perguntasFaq = document.querySelectorAll(".faq-pergunta");
 
-// 2. Criar um evento para cada botão da tabela de preços
-botoesPlano.forEach(function(botao) {
+// 2. Para cada botão, vamos adicionar um "ouvinte" de clique
+perguntasFaq.forEach(function(botao) {
     botao.addEventListener("click", function() {
         
-        // O '.closest' garante que ele encontre a caixa exata do cartão, não importa o que aconteça
-        let cartao = botao.closest(".card");
+        // Alterna a classe 'ativa' neste botão específico (faz a seta girar)
+        this.classList.toggle("ativa");
         
-        // Procura o H1 dentro desse cartão específico e extrai APENAS o texto visível
-        let tituloH1 = cartao.querySelector("h1");
-        let nomeDoPlano = tituloH1.textContent; 
+        // Pega o elemento exato que está logo abaixo do botão no HTML (a div faq-resposta)
+        let resposta = this.nextElementSibling;
         
-        // Injeta o nome correto (START, PRO ou PREMIUM) no modal
-        textoPlanoEscolhido.textContent = nomeDoPlano;
-        
-        // Exibe a janela escura
-        modal.style.display = "flex";
+        // A Mágica da Animação:
+        // Se a resposta já tiver uma altura definida, significa que está aberta. Então, fechamos.
+        if (resposta.style.maxHeight) {
+            resposta.style.maxHeight = null;
+        } else {
+            // Se estiver fechada, calculamos a altura exata do texto dentro dela e abrimos!
+            resposta.style.maxHeight = resposta.scrollHeight + "px";
+        }
     });
 });
 
-// 3. Lógica para fechar a janela ao clicar no "X"
-btnFecharModal.addEventListener("click", function() {
-    modal.style.display = "none";
-});
+function mudarTema(nomeDoTema) {
+    document.body.className = "";
 
-// 4. Fechar a janela se o utilizador clicar fora dela (no fundo escuro)
-window.addEventListener("click", function(evento) {
-    if (evento.target === modal) {
-        modal.style.display = "none";
+    if(nomeDoTema === 'noturno') {
+        document.body.classList.add('tema-noturno');
+    } else if (nomeDoTema === 'claro') {
+        document.body.classList.add('tema-claro');
     }
-});
+}
+
+function mudarTema(nomeDoTema) {
+    // 1. Limpa todas as classes atuais (remove o tema anterior)
+    document.body.className = "";
+    
+    // 2. Se o botão clicado não for o "padrao", ele adiciona a nova cor dinamicamente
+    if (nomeDoTema !== 'padrao') {
+        document.body.classList.add('tema-' + nomeDoTema);
+    }
+}

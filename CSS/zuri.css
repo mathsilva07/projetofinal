@@ -34,6 +34,39 @@ body::before {
     left: -10%;
 }
 
+body.tema-noturno::before {
+    background-color: rgba(180, 180, 180, 0.15);
+}
+
+body.tema-noturno::after {
+    background-color: rgba(150, 150, 150, 0.1);
+}
+
+
+body.tema-claro::before {
+    background-color: rgba(50, 50, 50, 0.1);
+}
+
+body.tema-claro::after {
+    background-color: (0, 0, 0, 0.05);
+}
+
+body.tema-carmesim::before {
+    background-color: rgba(179, 36, 36, 0.3);
+}
+
+body.tema-carmesim::after {
+    background-color: rgba(100, 10, 10, 0.2);
+}
+
+body.tema-azul::before {
+    background-color: rgba(75, 123, 236, 0.3);
+}
+
+body.tema-azul::after {
+    background-color: rgba(20, 50, 150, 0.2);
+}
+
 body::after {
     bottom: -10%;
     right: -10%;
@@ -56,49 +89,170 @@ body::after {
     }
 }
 
-/* O quadro do porta-retratos */
-.carrossel {
-    width: 100vw;
-    max-width: 100%;
-    /* Alinha com os 1000px da sua Navbar e da seção Sobre */
-    height: 100vh;
-    /* Altura ensinada pelo professor */
-    margin: 0 0 100px auto;
-    /* Centraliza na tela e dá um espaço em baixo */
+/* --- 1. TEXTO DE BOAS VINDAS (SOZINHO NO TOPO) --- */
+.home-texto {
+    text-align: center;
+    padding: 140px 20px 40px 20px;
+    /* Mantém espaço para o menu e para as ondas */
     position: relative;
-    border-radius: 0;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    width: 100%;
 }
 
-/* A fotografia em si */
-.carrossel img {
-   width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.5s ease-in-out;
-    border-radius: 0;
+.home-texto h1 {
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-/* Os botões invisíveis até passar o mouse */
-.carrossel button {
+.home-texto p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+/* --- 2. CONTAINER DAS DUAS COLUNAS --- */
+.home-duas-colunas {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    /* Faz com que as duas caixas tenham a mesma altura */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+
+.zuri-card-completo {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(214, 168, 124, 0.3);
+    border-radius: 20px;
+
+    padding: 30px;
+    width: 100%;
+}
+
+
+.zuri-card-completo .zuri-empresa {
+
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    flex: 1;
+}
+
+/* --- 3. CARTÃO "O QUE É O ZURI" --- */
+.zuri-empresa {
     background: transparent;
     border: none;
-    color: transparent;
-    cursor: pointer;
-    outline: none;
+    box-shadow: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Onde eles ficam encostados */
+.zuri-empresa h1 {
+    color: rgb(214, 168, 124);
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.zuri-empresa p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* --- 4. CARROSSEL COMPACTO (Como um Cartão) --- */
+.carrossel {
+    flex: 1;
+    /* Ocupa os outros 50% do espaço */
+    height: 450px;
+    /* Altura fixa e controlada */
+    margin: 0;
+    position: relative;
+
+    /* Agora tem bordas arredondadas iguais às do cartão de texto! */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.carrossel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 6, 2, 0.1), rgba(15, 6, 2, 0.6));
+    pointer-events: none;
+}
+
+.carrossel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+
+    transition: opacity 0.5s ease-in-out;
+
+    animation: zoomCinematografico 10s infinite alternate ease-in-out;
+}
+/* Ajuste dos botões para o novo tamanho do carrossel */
+.carrossel button {
+    background: rgba(0, 0, 0, 0.3);
+    /* Um fundo leve para não sumirem na foto */
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 #anterior {
-    left: 20px;
+    left: 15px;
 }
 
 #proximo {
-    right: 20px;
+    right: 15px;
 }
 
-/* Efeito ao passar o mouse com as cores do ZURI */
+.carrossel img.fade-ativo {
+    animation: fadeImagem 0.5s ease-in-out;
+}
 
+@keyframes fadeImagem {
+    0% {
+        opacity: 0;
+        /* Começa invisível */
+    }
+
+    100% {
+        opacity: 1;
+        /* Termina totalmente visível */
+    }
+}
 
 .navbar {
     background-color: rgb(15, 7, 2);
@@ -142,28 +296,29 @@ a:hover {
     transition: 1s;
 }
 
-.home {
+.home-texto {
     text-align: center;
-    padding: 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 40px;
+    /* 140px no topo para descolar do menu, e 60px em baixo para separar do carrossel */
+    padding: 140px 20px 60px 20px;
+    position: relative;
+    z-index: 10;
+    /* Garante que o texto fica por cima da animação de ondas */
 }
 
-.home h1 {
+.home-texto h1 {
     font-size: 65px;
-    /* Aumenta o tamanho para ter mais impacto na tela */
     font-weight: 700;
-    /* Deixa a fonte mais encorpada/grossa */
-    letter-spacing: 4px;
-    /* Espaçamento entre letras traz muita elegância */
-    margin-bottom: 50px;
-    /* Substitui o <br>, criando a margem correta até o carrossel */
+    letter-spacing: 6px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    /* Força todas as letras a ficarem maiúsculas */
-    color: #ffffff;
-    /* Mantém a cor base branca */
 }
 
+.home-texto p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 1.5;
+}
 
 .Sobre {
     padding: 100px 20px;
@@ -580,23 +735,8 @@ a:hover {
         font-size: 60px;
     }
 
-    .home h1 {
-        font-size: 20px;
-    }
 
-    .home p {
-        font-size: 20px;
-    }
 
-    .carrossel {
-        height: 350px;
-        margin-bottom: 50px;
-    }
-
-    .carrossel button {
-        font-size: 20px;
-        padding: 10px;
-    }
 
     .sobre-container,
     .sobre-container.reverso {
@@ -647,4 +787,354 @@ a:hover {
     width: auto;
     opacity: 0.7;
     filter: brightness(0) invert(1);
+}
+
+.faq-secao {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.faq-item {
+    background: rgba(24, 10, 2, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(214, 168, 124, 0.3);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.faq-pergunta {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    color: rgb(214, 168, 124);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+.faq-pergunta:hover {
+    background: rgba(214, 168, 124, 0.1);
+}
+
+.seta {
+    font-size: 14px;
+    transition: transform 0.4s ease;
+}
+
+.faq-pergunta.ativa .seta {
+    transform: rotate(180deg);
+}
+
+.faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.faq-resposta p {
+    padding: 20px;
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body.tema-noturno {
+    background-color: #080808;
+    color: #b0b0b0;
+}
+
+body.tema-noturno .navbar,
+body.tema-noturno .footer {
+    background-color: #030303;
+}
+
+body.tema-noturno .card,
+body.tema-noturno .sobre-container,
+body.tema-noturno .faq-item,
+body.tema-noturno .area-contato {
+    background: rgba(15, 15, 15, 0.8);
+    border-color: #222;
+}
+
+body.tema-noturno h1,
+body.tema-noturno h2,
+body.tema-noturno .titulo-servicos,
+body.tema-noturno .btnplano {
+    color: #ffffff;
+}
+
+body.tema-claro {
+    background-color: #FAF8F5;
+    /* Fundo creme/off-white super elegante */
+    color: #2C1E16;
+    /* Marrom ultraescuro (quase preto) para máximo contraste */
+}
+
+body.tema-claro .navbar,
+body.tema-claro .footer {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EAE0D5;
+}
+
+body.tema-claro .titulo-nav,
+body.tema-claro a,
+body.tema-claro .home h1,
+body.tema-claro .titulo-servicos {
+    color: #1A110B;
+    /* Títulos marcantes e em grande destaque */
+}
+
+body.tema-claro .card,
+body.tema-claro .card-depoimento,
+body.tema-claro .sobre-container,
+body.tema-claro .faq-item,
+body.tema-claro .area-contato body.tema-claro .card-servico {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #cccccc;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+body.tema-claro p,
+body.tema-claro .faq-resposta p,
+body.tema-claro .texto-depoimento {
+    color: #4A3B32;
+}
+
+body.tema-claro .estrelas {
+    color: #D4A373;
+    /* Estrelas douradas/bronze */
+}
+
+body.tema-claro .btn-enviar {
+    background-color: #2C1E16;
+    color: #FAF8F5;
+    border: 1px solid #2C1E16;
+}
+
+body.tema-claro .btn-enviar:hover {
+    background-color: transparent;
+    color: #2C1E16;
+}
+
+body.tema-claro .camada-onda {
+    fill: #EAE0D5;
+}
+
+/* TEMA CARMESIM (Vermelho Escuro Luxuoso) */
+body.tema-carmesim {
+    background-color: #140404;
+    /* Fundo vinho quase preto */
+    color: #f0d0d0;
+    /* Texto levemente rosado para descanso visual */
+}
+
+body.tema-carmesim .navbar,
+body.tema-carmesim .footer {
+    background-color: #0a0202;
+}
+
+/* Altera o vidro, as bordas e a cor de todos os cartões do site */
+body.tema-carmesim .card,
+body.tema-carmesim .card-depoimento,
+body.tema-carmesim .sobre-container,
+body.tema-carmesim .faq-item,
+body.tema-carmesim .area-contato,
+body.tema-carmesim .card-servico {
+    background: rgba(45, 10, 10, 0.85);
+    /* Vidro avermelhado */
+    border-color: #b32424;
+}
+
+/* Altera os títulos e estrelas para vermelho vivo */
+body.tema-carmesim h1,
+body.tema-carmesim h2,
+body.tema-carmesim .titulo-servicos,
+body.tema-carmesim .btnplano,
+body.tema-carmesim .estrelas,
+body.tema-carmesim .faq-pergunta {
+    color: #ff4d4d;
+}
+
+body.tema-carmesim .btn-enviar {
+    background-color: #b32424;
+    color: white;
+}
+
+body.tema-carmesim .btn-enviar:hover {
+    background-color: transparent;
+    color: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+/* TEMA AZUL (Safira / Navy) */
+body.tema-azul {
+    background-color: #040814;
+    /* Fundo azul marinho profundo */
+    color: #d0e0f0;
+    /* Texto num tom de gelo/azul clarinho */
+}
+
+body.tema-azul .navbar,
+body.tema-azul .footer {
+    background-color: #02040a;
+}
+
+body.tema-azul .card,
+body.tema-azul .card-depoimento,
+body.tema-azul .sobre-container,
+body.tema-azul .faq-item,
+body.tema-azul .area-contato,
+body.tema-azul .card-servico {
+    background: rgba(10, 25, 50, 0.85);
+    /* Vidro azulado */
+    border-color: #4b7bec;
+}
+
+body.tema-azul h1,
+body.tema-azul h2,
+body.tema-azul .titulo-servicos,
+body.tema-azul .btnplano,
+body.tema-azul .estrelas,
+body.tema-azul .faq-pergunta {
+    color: #4b7bec;
+    /* Destaques em azul royal vibrante */
+}
+
+body.tema-azul .btn-enviar {
+    background-color: #4b7bec;
+    color: white;
+}
+
+body.tema-azul .btn-enviar:hover {
+    background-color: transparent;
+    color: #4b7bec;
+    border-color: #4b7bec;
+}
+
+.ondas-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.onda {
+    display: block;
+    width: 200%;
+    height: auto;
+    animation: moverOnda 15s linear infinite;
+}
+
+@keyframes moverOnda {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.camada-onda {
+    fill: rgb(214, 168, 124);
+    transition: fill 0.5s ease-in-out;
+}
+
+body.tema-noturno .camada-onda {
+    fill: rgba(180, 180, 180, 0.4);
+}
+
+body.tema-claro .camada-onda {
+    fill: #222222;
+}
+
+body.tema-carmesim .camada-onda {
+    fill: #b32424;
+}
+
+body.tema-azul .camada-onda {
+    fill: #4b7bec;
+}
+
+.experiencias-secao {
+    padding: 20px 20px 80px 20px;
+    margin-top: 50px;
+}
+
+.cards-experiencia {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experiencias-secao {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-depoimento {
+    background: rgba(24, 10, 2, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(214, 168, 124, 0.3);
+    border-radius: 15px;
+    padding: 40px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.card-depoimento:hover {
+    transform: translateY(-5px);
+}
+
+.estrelas {
+    color: rgb(214, 168, 124);
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.texto-depoimento {
+    color: #e0e0e0;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.cliente-nome {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.cliente-cargo {
+    color: rgb(214, 168, 124);
+    font-size: 14px;
+    margin-top: 5px;
 }
