@@ -85,12 +85,26 @@ function mudarTema(nomeDoTema) {
     }
 }
 
+// --- LÓGICA DO SELETOR DE TEMAS ---
 function mudarTema(nomeDoTema) {
     // 1. Limpa todas as classes atuais (remove o tema anterior)
     document.body.className = "";
     
-    // 2. Se o botão clicado não for o "padrao", ele adiciona a nova cor dinamicamente
+    // 2. Adiciona a nova cor dinamicamente
     if (nomeDoTema !== 'padrao') {
         document.body.classList.add('tema-' + nomeDoTema);
     }
+
+    // 3. NOVO: Salva o nome do tema na memória do navegador
+    localStorage.setItem('zuriTemaSalvo', nomeDoTema);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Busca a informação na memória
+    let temaGuardado = localStorage.getItem('zuriTemaSalvo');
+    
+    // Se existir algum tema guardado na memória, ativa-o
+    if (temaGuardado) {
+        mudarTema(temaGuardado);
+    }
+});
